@@ -5,6 +5,7 @@ myConnector.getSchema = function (schemaCallback) {
     var cols = [
         {id: "voteraddress",	alias: "Voter Address",						dataType: tableau.dataTypeEnum.string},
         {id: "division",		alias: "Division Name",						dataType: tableau.dataTypeEnum.string},
+        {id: "level",		alias: "Level",						dataType: tableau.dataTypeEnum.string},
         {id: "office",			alias: "Office Name",						dataType: tableau.dataTypeEnum.string},
         {id: "rep",				alias: "Representative Name",				dataType: tableau.dataTypeEnum.string},
         {id: "repparty",		alias: "Representative Party",				dataType: tableau.dataTypeEnum.string},
@@ -77,7 +78,8 @@ myConnector.getData = function(table, doneCallback) {
 								}
             tableData.push({
                 "office"		: 	offices[i].name,
-                "division"		:	divisions[offices[i].divisionId].name,
+                "level"		: 	offices[i].levels,
+		    "division"		:	divisions[offices[i].divisionId].name,
                 "repno"			:	offices[i].officialIndices[j],
                 "rep"			:	rep[offices[i].officialIndices[j]].name,
                 "repparty"		:	rep[offices[i].officialIndices[j]].party,
