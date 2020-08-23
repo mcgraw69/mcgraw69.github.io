@@ -78,7 +78,7 @@ myConnector.getData = function(table, doneCallback) {
 								}
             tableData.push({
                 "office"		: 	offices[i].name,
-                "level"		: 	offices[i].levels,
+                "level"		: 	offices[i].levels[0],
 		    "division"		:	divisions[offices[i].divisionId].name,
                 "repno"			:	offices[i].officialIndices[j],
                 "rep"			:	rep[offices[i].officialIndices[j]].name,
